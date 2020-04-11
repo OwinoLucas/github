@@ -26,23 +26,22 @@
             <li class="list-group-item"><b>Username: </b> {{githubUsers.login}}</li>
             <li class="list-group-item"><b>Location: </b> {{githubUsers.location}}</li>
             <li class="list-group-item"><b>E-Mail: </b> {{githubUsers.email}}</li>
-            <li class="list-group-item"><b>Date Joined: </b> {{githubUsers.created_at}}</li>
+            <li class="list-group-item"><b>Date Joined: </b> {{githubUsers.created_at|date}}</li>
           </ul>
 
         </div>
-      </div>
+      </div><br>
 
       <div class="status m-t-1">
 
         <span class="p-a-05 bg-info text-xs-center"> {{githubUsers.public_repos}} Public Repos </span>&nbsp;
-        <span class="p-a-05 bg-danger m-t-1 text-xs-center"> {{githubUsers.followers}} Followers </span>&nbsp;
-        <span class="p-a-05 bg-inverse m-t-1 text-xs-center"> {{githubUsers.following}} Followings </span>
+        <span class="p-a-05 bg-warning m-t-1 text-xs-center"> {{githubUsers.followers}} Followers </span>&nbsp;
+        <span class="p-a-05 bg-secondary m-t-1 text-xs-center"> {{githubUsers.following}} Followings </span>
 
       </div>
 
     </div>
-  </div>
-
+  </div><br>
   <div class=" card bg-dark text-white ">
     <h2 class="text-center">Repositories</h2>
     <div class="githubRepos">
@@ -53,7 +52,7 @@
             <hr>
             <h5 class="">DESCRIPTION:<span> {{githubRepo.description}}</span></h5>
             <div class="card-subtitle mb-2">Language: <span> {{githubRepo.language}}</span></div>
-            <div class="card-subtitle mb-2">Created: <span id="created">{{githubRepo.created_at }}</span> <br>
+            <div class="card-subtitle mb-2">Created: <span id="created">{{githubRepo.created_at|date }}</span> <br>
               On: <span>{{githubRepo.created_at }}</span></div>
           </div>
         </div>
@@ -67,7 +66,7 @@
           </div>
           <div class="btn-group float-right">
             <button class="btn btn-outline-primary" id="visit"><a href="{{githubRepo.html_url}}" target="blank"
-                class="card-link">VIEW</a> </button>
+                class="card-link">View</a> </button>
 
           </div>
         </div>
