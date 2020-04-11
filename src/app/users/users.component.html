@@ -14,12 +14,12 @@
     <div *ngIf="githubUsers && (githubUsers.userName && githubUsers.userName.length > 0)">
 
       <div class="card">
-        <h4 class="card-header">{{githubUsers.user.name}}</h4>
+        <h4 class="card-header">{{githubUsers.userName.name}}</h4>
         <div class="card-block">
           <div class="row">
             <div class="col-xl-4 m-b-1">
-              <img src="{{githubUsers.user.avatar_url}}" class="profile-img img-thumbnail m-b-1" />
-              <a class="btn btn-sm btn-outline-primary btn-block m-t-1" href="{{githubUsers.user.html_url}}"
+              <img src="{{githubUsers.userName.avatar_url}}" class="profile-img img-thumbnail m-b-1" />
+              <a class="btn btn-sm btn-outline-primary btn-block m-t-1" href="{{githubUsers.userName.html_url}}"
                 target="_blank">View Profile</a>
             </div>
 
@@ -27,9 +27,9 @@
 
 
               <ul class="list-group">
-                <li class="list-group-item"><b>Username: </b> {{githubUsers.user.login}}</li>
-                <li class="list-group-item"><b>Location: </b> {{githubUsers.user.location}}</li>
-                <li class="list-group-item"><b>E-Mail: </b> {{githubUsers.user.email}}</li>
+                <li class="list-group-item"><b>Username: </b> {{githubUsers.userName.login}}</li>
+                <li class="list-group-item"><b>Location: </b> {{githubUsers.userName.location}}</li>
+                <li class="list-group-item"><b>E-Mail: </b> {{githubUsers.userName.email}}</li>
 
               </ul>
 
@@ -54,30 +54,6 @@
     </div>
 
   </div>
-  <div class="col-md-7">
 
-    <div *ngIf="githubUser && githubUser.user && (githubUser.userName && githubUser.userName.length > 0)">
-      <div class="card">
-        <h5 class="card-header">Repos</h5>
-        <div class="card-block">
-
-          <div class="list-group">
-
-            <a *ngFor="let repo of githubUser.repos" href="{{repo.html_url}}" target="_blank"
-              class="list-group-item list-group-item-action">
-              <span class="tag tag-info pull-xs-right">{{repo.watchers}} Watchers</span>
-              <span class="tag tag-success pull-xs-right m-r-05">{{repo.forks}} Forks</span>
-              <h6 class="list-group-item-heading">{{repo.name}}</h6>
-              <p class="list-group-item-text">{{repo.description}}</p>
-            </a>
-
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-  </div>
 
 </div>

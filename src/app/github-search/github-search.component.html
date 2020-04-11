@@ -1,11 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">GitHub Search</a>
   <div class="collapse navbar-collapse" id="navbarColor02">
-    <form class="form-inline my-2 my-lg-0" #githubSearchForm='ngForm'>
-      <input class="form-control mr-sm-2" type="text" id="userName" placeholder="Enter github username..."
-        [(ngModel)]="githubUser.userName" name="userName" #userName='ngModel'>
+
+
+    <form class="form-inline my-2 my-lg-0" (ngClick)="searchUser()" id="githubSearchForm">
+      <input class="form-control mr-sm-2" type="text" placeholder="Enter github username..."
+        [(ngModel)]="githubUsers.userName" name="userName" (keyup)="searchUser()">
       Display{{githubUser.userName}}
-      <button class="btn btn-secondary my-2 my-sm-0" (click)="getUser()">Search</button>
+
     </form>
 
     &nbsp;

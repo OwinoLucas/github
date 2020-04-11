@@ -9,10 +9,11 @@ import { environment } from "../../../environments/environment";
 })
 export class GithubService {
 
-  githubUsers: GithubUsers
+  updateUsers: GithubUsers
+  access_token: string = environment.access_token;
 
   constructor(private http: HttpClient) {
-    this.githubUsers = new GithubUsers();
+    this.updateUsers = new GithubUsers('', '', '', '', '', '', 0, 0, 0, new Date())
   }
 
   getUser() {

@@ -1,7 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { GithubUsers } from "../github-users";
 import { GithubService } from '../service/github/github.service';
-import { rejects } from 'assert';
+import { environment } from "../../environments/environment";
+import { Observable } from "rxjs";
+import { promise } from 'protractor';
 
 @Component({
   selector: 'app-github-search',
@@ -11,6 +13,7 @@ import { rejects } from 'assert';
 export class GithubSearchComponent implements OnInit {
   @Input() githubUsers: GithubUsers
   @Output() userUpdated: EventEmitter<GithubUsers> = new EventEmitter<GithubUsers>();
+
 
   constructor(private githubService: GithubService) { }
 
@@ -37,24 +40,15 @@ export class GithubSearchComponent implements OnInit {
 
   }
 
-  getUserInfo() {
+  getUserInfo(): Observable<GithubUsers> {
     if (this.githubUsers.userName && this.githubUsers.userName.length > 0) {
-      let promise = new Promise((resolve, reject) => {
-        this.githubService.getUser().toPromise().then(response => {
-          this.githubUsers.userName = this.githubUsers.userName;
-          this.userUpdated.emit(this.githubUsers);
+      var out = this.githubService.getUser().subscribe((userName) => {
+        this.githubUsers = userName
 
-          resolve()
-        },
-          error => {
-            this.githubUsers.userName = 'user name not founnd'
+      }) as HTMLElement
 
-            reject(error)
-
-          })
-      })
-      return promise
     }
+
 
 
   }
