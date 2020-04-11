@@ -1,7 +1,7 @@
 import { Component, OnInit, } from '@angular/core';
 import { GithubUsers } from "../github-users";
 import { GithubService } from "../service/github/github.service";
-import { error } from 'protractor';
+import { GithubRepos } from "../github-repos";
 
 @Component({
   selector: 'app-users',
@@ -12,9 +12,10 @@ export class UsersComponent implements OnInit {
   searchUsers = true;
 
   githubUsers: GithubUsers;
+  githubRepos: GithubRepos;
   userName: string;
 
-  constructor(private githubUserServive: GithubService) { }
+  constructor(private githubUserServive: GithubService, private githubRepoServive: GithubService) { }
 
   search(userName) {
     this.githubUserServive.getUser(userName).then((success) => {
@@ -23,6 +24,13 @@ export class UsersComponent implements OnInit {
       (error) => {
         alert("username not found");
         console.log(error)
+      })
+
+    this.githubRepoServive.getRepo(userName).then((results) => {
+      this.githubRepos = this.githubRepoServive.updateRepo;
+    },
+      (error) => {
+        console.log(error);
       })
   }
 
