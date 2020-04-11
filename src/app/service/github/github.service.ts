@@ -39,7 +39,7 @@ export class GithubService {
         resolve();
       },
         error => {
-          alert('Enter valid user name');
+          alert('There seems to be a problem');
           console.log(error)
 
           reject();
