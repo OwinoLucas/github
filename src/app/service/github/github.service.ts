@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { GithubUsers } from "../../github-users";
 import { environment } from "../../../environments/environment";
-import { rejects } from 'assert';
 import { GithubRepos } from 'src/app/github-repos';
 
 
@@ -16,7 +15,8 @@ export class GithubService {
   access_token: string = environment.access_token;
 
   constructor(private http: HttpClient) {
-    this.updateUsers = new GithubUsers('', '', '', '', '', '', 0, 0, 0, new Date())
+    this.updateUsers = new GithubUsers('', '', '', '', '', '', 0, 0, 0, new Date());
+    this.updateRepo = new GithubRepos('', '', '', new Date(), 0, 0, '');
   }
 
   //this gets user info of userName typed
@@ -78,12 +78,5 @@ export class GithubService {
     })
     return promise
   }
-
-
-
-
-
-
-
 
 }
