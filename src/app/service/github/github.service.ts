@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { GithubUsers } from "../../github-users";
 import { environment } from "../../../environments/environment";
+import { rejects } from 'assert';
+import { GithubRepos } from 'src/app/github-repos';
 
 
 @Injectable({
@@ -9,7 +11,8 @@ import { environment } from "../../../environments/environment";
 })
 export class GithubService {
 
-  updateUsers: GithubUsers
+  updateUsers: GithubUsers;
+  updateRepo: GithubRepos;
   access_token: string = environment.access_token;
 
   constructor(private http: HttpClient) {
@@ -18,7 +21,7 @@ export class GithubService {
 
   //this gets user info of userName typed
   getUser(userName: string) {
-    interface GitResponse {
+    interface GithubUserResponse {
       url: string;
       name: string;
       email: string;
@@ -32,9 +35,37 @@ export class GithubService {
       created_at: Date;
     }
     let promise = new Promise((resolve, reject) => {
-      this.http.get<GitResponse>('https://api.github.com/users/' + userName + '?access_token=' + environment.access_token).toPromise().then((result) => {
+      this.http.get<GithubUserResponse>('https://api.github.com/users/' + userName + '?access_token=' + environment.access_token).toPromise().then((result) => {
         this.updateUsers = result;
         console.log(this.updateUsers);
+
+        resolve();
+      },
+        error => {
+          alert('There seems to be a problem');
+          console.log(error)
+
+          reject();
+        })
+    })
+    return promise
+  }
+
+  //fetch repo data
+  getRepo(userName) {
+    interface GithubRepoResponse {
+      name: string;
+      html_url: string;
+      description: string;
+      forks: number;
+      watchers_count: number;
+      language: string;
+      created_at: Date;
+    }
+    let promise = new Promise((resolve, reject) => {
+      this.http.get<GithubRepoResponse>('https://api.github.com/users/' + userName + '/repos?access_token=' + environment.access_token).toPromise().then((result) => {
+        this.updateRepo = result;
+        console.log(this.updateRepo);
 
         resolve();
       },
@@ -51,11 +82,7 @@ export class GithubService {
 
 
 
-  // getRepos(): Observable<any>{
-  //   if(this.userName){
-  //     return this.http.get<any>(`${environment.url1}`)
-  //    }
-  //  }
+
 
 
 
