@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { GithubUsers } from "../github-users";
+import { GithubService } from "../service/github/github.service";
+import { error } from 'protractor';
 
 @Component({
   selector: 'app-users',
@@ -7,11 +9,25 @@ import { GithubUsers } from "../github-users";
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  @Input() githubUsers: GithubUsers
+  searchUsers = true;
 
-  constructor() { }
+  githubUsers: GithubUsers;
+  userName: string;
+
+  constructor(private githubUserServive: GithubService) { }
+
+  search(userName) {
+    this.githubUserServive.getUser(userName).then((success) => {
+      this.githubUsers = this.githubUserServive.updateUsers;
+    },
+      (error) => {
+        alert("username not found");
+        console.log(error)
+      })
+  }
 
   ngOnInit() {
+    this.search('OwinoLucas');
   }
 
 }
