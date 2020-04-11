@@ -3,11 +3,11 @@
   <div class="collapse navbar-collapse" id="navbarColor02">
 
 
-    <form class="form-inline my-2 my-lg-0" (ngClick)="searchUser()" id="githubSearchForm">
-      <input class="form-control mr-sm-2" type="text" placeholder="Enter github username..."
-        [(ngModel)]="githubUsers.userName" name="userName" (keyup)="searchUser()">
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Enter github username..." [(ngModel)]="userName"
+        name="userName" aria-label="Search">
       Display{{githubUser.userName}}
-
+      <button class="btn" (click)="search()">Search</button>
     </form>
 
     &nbsp;
