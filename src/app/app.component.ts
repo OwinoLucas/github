@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GithubUsers } from "./github-users";
+
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,9 @@ import { GithubUsers } from "./github-users";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public githubUser1: GithubUsers;
+  title = 'github';
 
   constructor() {
-    this.githubUser1 = new GithubUsers
+
   }
 }

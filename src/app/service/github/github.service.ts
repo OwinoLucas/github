@@ -16,20 +16,33 @@ export class GithubService {
     this.updateUsers = new GithubUsers('', '', '', '', '', '', 0, 0, 0, new Date())
   }
 
-  getUser() {
+  //this gets user info of userName typed
+  getUser(userName: string) {
     interface GitResponse {
-      userName: string;
+      url: string;
+      name: string;
+      email: string;
+      login: string;
+      html_url: string;
+      location: string;
+      public_repos: number;
+      followers: number;
+      following: number;
+      avatar_url: string;
+      created_at: Date;
     }
     let promise = new Promise((resolve, reject) => {
-      this.http.get<GitResponse>(`${environment.url}`).toPromise().then(response => {
-        this.githubUsers.userName = response.userName
+      this.http.get<GitResponse>('https://api.github.com/users/' + userName + '?access_token=' + environment.access_token).toPromise().then((result) => {
+        this.updateUsers = result;
+        console.log(this.updateUsers);
 
-        resolve()
+        resolve();
       },
         error => {
-          this.githubUsers.userName = 'Enter valid user name'
+          alert('Enter valid user name');
+          console.log(error)
 
-          reject(error)
+          reject();
         })
     })
     return promise
@@ -44,9 +57,6 @@ export class GithubService {
   //    }
   //  }
 
-  updateUser(userName: string) {
-    this.githubUsers.userName = this.githubUsers.userName;
-  }
 
 
 }
