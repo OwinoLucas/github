@@ -27,7 +27,10 @@
             <li class="list-group-item"><b>Username: </b> {{githubUsers.login}}</li>
             <li class="list-group-item"><b>Location: </b> {{githubUsers.location}}</li>
             <li class="list-group-item"><b>E-Mail: </b> {{githubUsers.email}}</li>
-            <li class="list-group-item"><b>Date Joined: </b> {{githubUsers.created_at|date}}</li>
+            <li class="list-group-item"><b>Date Joined: </b> {{githubUsers.created_at|date}}
+              <br>
+              <span class="blockquote-footer">{{githubUsers.created_at | date|dateAgo}}</span>
+            </li>
           </ul>
 
         </div>
