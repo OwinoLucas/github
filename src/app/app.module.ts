@@ -11,13 +11,15 @@ import { UsersComponent } from './users/users.component';
 import { GithubSearchComponent } from './github-search/github-search.component';
 import { GithubService } from './service/github/github.service';
 import { ReposComponent } from './repos/repos.component';
+import { DateAgoPipe } from './date-ago.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     GithubSearchComponent,
-    ReposComponent
+    ReposComponent,
+    DateAgoPipe
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { GithubUsers } from "../github-users";
 import { GithubService } from "../service/github/github.service";
 import { GithubRepos } from "../github-repos";
 
+
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',

@@ -53,8 +53,9 @@
             <hr>
             <h5 class="">Description:<span> {{githubRepo.description}}</span></h5>
             <div class="card-subtitle mb-2">Language: <span> {{githubRepo.language}}</span></div>
-            <div class="card-subtitle mb-2">Created: <span id="created">{{githubRepo.created_at|date }}</span> <br>
-              On: <span>{{githubRepo.created_at }}</span></div>
+            <div class="card-subtitle mb-2">Created: <span id="created">{{githubRepo.created_at|date }}</span>
+              <br>
+              <span class="blockquote-footer">{{githubRepo.created_at | date|dateAgo}}</span></div>
           </div>
         </div>
         <div class="card-footer">
