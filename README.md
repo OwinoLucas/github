@@ -1,27 +1,38 @@
-# Github
+# GITHUB PROFILE SEARCH
+#### By Lucas Otieno
+## Description
+This is a web application where users can enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A person can also look for repositories
+## Requirements
+* Project must contain a well-designed landing page that displays your GitHub information such as your username, your profile photos and a list of your repositories.
+* You must place your access key inside the environment.ts file and place it inside the gitignore file.
+* You must create a HTTP service that uses a promise to make the requests to the GitHub API.
+* The HTTP request should be able to search for both GitHub users and GitHub repositories.
+* Project must have two classes for the user and repository.
+* Project must have a proper routing structure that links a GitHub username to the users GitHub repositories.
+* Project must have a separate routing module.
+* Project must contain a custom directive and a custom pipe.
+* Project must be well designed and visually appealing and of portfolio quality.
+* Project must have a well-documented README file.
+* Project must be deployed and the deployed link should be submitted.
+## Link to live site
+[](link)
+## License
+Copyright (c) [2020] [Lucas Otieno]
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-## Development server
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

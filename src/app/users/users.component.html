@@ -47,10 +47,10 @@
     <div class="githubRepos">
       <div class="label " *ngFor="let githubRepo of githubRepos">
         <div class="card-body">
-          <h4 class="card-title h4">REPO NAME:<span class="rep">{{githubRepo.name}}</span> </h4>
+          <h4 class="card-title h4">Repo Name:<span class="rep">{{githubRepo.name}}</span> </h4>
           <div class="card-text">
             <hr>
-            <h5 class="">DESCRIPTION:<span> {{githubRepo.description}}</span></h5>
+            <h5 class="">Description:<span> {{githubRepo.description}}</span></h5>
             <div class="card-subtitle mb-2">Language: <span> {{githubRepo.language}}</span></div>
             <div class="card-subtitle mb-2">Created: <span id="created">{{githubRepo.created_at|date }}</span> <br>
               On: <span>{{githubRepo.created_at }}</span></div>
