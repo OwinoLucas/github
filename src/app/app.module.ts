@@ -15,6 +15,7 @@ import { DateAgoPipe } from './date-ago.pipe';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UnderlineDirective } from './underline.directive';
 import { HighlightDirective } from './highlight.directive';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HighlightDirective } from './highlight.directive';
     DateAgoPipe,
     NavbarComponent,
     UnderlineDirective,
-    HighlightDirective
+    HighlightDirective,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
