@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { GithubUsers } from "../../github-users";
 import { environment } from "../../../environments/environment";
-import { GithubRepos } from 'src/app/github-repos';
+import { GithubRepos } from '../../github-repos';
 
 
 @Injectable({

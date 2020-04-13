@@ -19,19 +19,20 @@ export class ReposComponent implements OnInit {
   constructor(public githubUserServive: GithubService, private githubRepoServive: GithubService) { }
 
   search(userName) {
-    this.githubUserServive.getUser(userName).then((success) => {
-      this.githubUsers = this.githubUserServive.updateUsers;
-    },
-      (error) => {
-        console.log(error);
-      })
-
     this.githubRepoServive.getRepo(userName).then((results) => {
       this.githubRepos = this.githubRepoServive.updateRepo;
     },
       (error) => {
         console.log(error);
       })
+    // this.githubUserServive.getUser(userName).then((success) => {
+    // this.githubUsers = this.githubUserServive.updateUsers;
+    // },
+    //  (error) => {
+    //   console.log(error);
+    //  })
+
+
   }
 
   ngOnInit() {
