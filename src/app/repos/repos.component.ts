@@ -36,6 +36,7 @@ export class ReposComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.search('OwinoLucas');
   }
 
 }
