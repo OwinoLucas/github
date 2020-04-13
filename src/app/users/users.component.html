@@ -22,12 +22,12 @@
         <div class="col-xl-8">
 
           <ul class="list-group">
-            <li class="list-group-item"><b>Username: </b> {{githubUsers.login}}</li>
-            <li class="list-group-item"><b>Location: </b> {{githubUsers.location}}</li>
-            <li class="list-group-item"><b>E-Mail: </b> {{githubUsers.email}}</li>
-            <li class="list-group-item"><b>Date Joined: </b> {{githubUsers.created_at|date}}
+            <li class="list-group-item" appHighlight><b>Username: </b> {{githubUsers.login}}</li>
+            <li class="list-group-item" appHighlight><b>Location: </b> {{githubUsers.location}}</li>
+            <li class="list-group-item" appHighlight><b>E-Mail: </b> {{githubUsers.email}}</li>
+            <li class="list-group-item" appHighlight><b>Date Joined: </b> {{githubUsers.created_at|date}}
               <br>
-              <span class="blockquote-footer">{{githubUsers.created_at | date|dateAgo}}</span>
+              <span class="blockquote-footer" appUnderline>{{githubUsers.created_at | date|dateAgo}}</span>
             </li>
           </ul>
 
@@ -49,21 +49,21 @@
     <div class="githubRepos">
       <div class="label " *ngFor="let githubRepo of githubRepos">
         <div class="card-body">
-          <h4 class="card-title h4">Repo Name:<span class="rep">{{githubRepo.name}}</span> </h4>
+          <h4 class="card-title h4" appUnderline>Repo Name: <span class="rep">{{githubRepo.name}}</span> </h4>
           <div class="card-text">
             <hr>
-            <h5 class="">Description:<span> {{githubRepo.description}}</span></h5>
-            <div class="card-subtitle mb-2">Language: <span> {{githubRepo.language}}</span></div>
+            <h5 class="" appUnderline>Description:<span> {{githubRepo.description}}</span></h5>
+            <div class="card-subtitle mb-2" appUnderline>Language: <span> {{githubRepo.language}}</span></div>
             <div class="card-subtitle mb-2">Created: <span id="created">{{githubRepo.created_at|date }}</span>
               <br>
               <span class="blockquote-footer">{{githubRepo.created_at | date|dateAgo}}</span></div>
           </div>
         </div>
         <div class="card-footer">
-          <div class="btn-group">Watchers:
+          <div class="btn-group" appUnderline>Watchers:
             <button class="btn btn-sm btn-primary"><span class="forks">{{githubRepo.watchers_count}}</span></button>
           </div>&nbsp;&nbsp;
-          <div class="btn-group">Forks:
+          <div class="btn-group" appUnderline>Forks:
             <button class="btn btn-sm btn-outline-success">
               <span class="forks">{{githubRepo.forks}}</span></button>
           </div>

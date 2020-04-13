@@ -13,6 +13,8 @@ import { GithubService } from './service/github/github.service';
 import { ReposComponent } from './repos/repos.component';
 import { DateAgoPipe } from './date-ago.pipe';
 import { NavbarComponent } from './navbar/navbar.component';
+import { UnderlineDirective } from './underline.directive';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     GithubSearchComponent,
     ReposComponent,
     DateAgoPipe,
-    NavbarComponent
+    NavbarComponent,
+    UnderlineDirective,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
