@@ -70,7 +70,6 @@ export class GithubService {
         resolve();
       },
         error => {
-          alert('There seems to be a problem');
           console.log(error)
 
           reject();
