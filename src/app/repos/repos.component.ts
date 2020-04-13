@@ -25,12 +25,12 @@ export class ReposComponent implements OnInit {
       (error) => {
         console.log(error);
       })
-    // this.githubUserServive.getUser(userName).then((success) => {
-    // this.githubUsers = this.githubUserServive.updateUsers;
-    // },
-    //  (error) => {
-    //   console.log(error);
-    //  })
+    this.githubUserServive.getUser(userName).then((success) => {
+      this.githubUsers = this.githubUserServive.updateUsers;
+    },
+      (error) => {
+        console.log(error);
+      })
 
 
   }

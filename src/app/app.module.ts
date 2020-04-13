@@ -12,6 +12,7 @@ import { GithubSearchComponent } from './github-search/github-search.component';
 import { GithubService } from './service/github/github.service';
 import { ReposComponent } from './repos/repos.component';
 import { DateAgoPipe } from './date-ago.pipe';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DateAgoPipe } from './date-ago.pipe';
     UsersComponent,
     GithubSearchComponent,
     ReposComponent,
-    DateAgoPipe
+    DateAgoPipe,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
